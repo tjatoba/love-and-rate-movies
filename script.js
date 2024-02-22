@@ -8,7 +8,11 @@ const API_URL =
 
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
+const searchURL = BASE_URL + "search/movie?" + API_KEY;
+
 const main = document.getElementById("main");
+const form = document.getElementById("form");
+const search = document.getElementById("search");
 
 const getPopularMovies = (url) => {
   fetch(url)
@@ -54,3 +58,15 @@ const getColor = (vote) => {
     return "red";
   }
 };
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const searchResult = search.value;
+
+  if (searchResult) {
+    getPopularMovies(searchURL + "&query=" + searchResult);
+  } else {
+    getPopularMovies(API_URL);
+  }
+});
