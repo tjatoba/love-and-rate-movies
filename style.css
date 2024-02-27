@@ -18,6 +18,9 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: x-large;
+  color: aliceblue;
+  text-shadow: 0.1em 0.1em 0.2em gray;
   background-color: var(--secondary-color);
 }
 
@@ -46,6 +49,24 @@ main {
   justify-content: center;
 }
 
+#tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.tag {
+  color: white;
+  padding: 10px 20px;
+  background-color: darkslategrey;
+  border-radius: 50px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
 .movie {
   width: 300px;
   margin: 1rem;
@@ -105,4 +126,12 @@ main {
 
 .movie:hover .overview {
   transform: translateY(0);
+}
+
+.tag.highlight {
+  background-color: rgba(255, 68, 0, 0.882);
+}
+
+.no-results {
+  color: white;
 }
